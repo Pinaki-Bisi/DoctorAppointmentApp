@@ -1,4 +1,7 @@
 package com.example.clinic.appointmentscheduler.repository;
 
-public class DoctorRepository {
+import com.example.clinic.appointmentscheduler.entity.Doctor;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DoctorRepository extends JpaRepository<Doctor, Long> {
 }
