@@ -1,7 +1,7 @@
 package com.example.clinic.appointmentscheduler.service;
 
-import com.example.clinic.entity.User;
-import com.example.clinic.repository.UserRepository;
+import com.example.clinic.appointmentscheduler.entity.User;
+import com.example.clinic.appointmentscheduler.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.*;
         import org.springframework.stereotype.Service;
@@ -29,5 +29,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 user.getPassword(),
                 user.getRoles().stream()
                         .map(role -> new SimpleGrantedAuthority("ROLE_" + role.name()))
-                        .collect(Coll
-
+                        .collect(Collectors.toList())
+        );
+    }
+}
